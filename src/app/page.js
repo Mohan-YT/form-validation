@@ -99,7 +99,7 @@ export default function Home() {
           onSubmit={handleSubmit(onSubmitForm)}
           className="w-[310px] flex flex-col justify-center items-center border-1 border-gray-500 p-3 rounded-lg"
         >
-          <div className="flex flex-col w-full mb-1">
+          <div className="flex flex-col w-full mb-1 text-black">
             <label htmlFor="">F-Name :</label>
             <input
               {...register("firstName")}
@@ -109,7 +109,7 @@ export default function Home() {
             {errors?.firstName && <p className='text-red-500 text-sm'>{errors.firstName.message}</p>}
           </div>
 
-          <div className="flex flex-col w-full mb-1">
+          <div className="flex flex-col w-full mb-1 text-black">
             <label htmlFor="">L-Name :</label>
             <input
               {...register("lastName")}
@@ -119,7 +119,7 @@ export default function Home() {
             {errors?.lastName && <p className='text-red-500 text-sm'>{errors.lastName.message}</p>}
           </div>
 
-          <div className="flex flex-col w-full mb-1">
+          <div className="flex flex-col w-full mb-1 text-black">
             <label htmlFor="">Age :</label>
             <input
               {...register("age")}
@@ -129,7 +129,7 @@ export default function Home() {
             {errors?.age && <p className='text-red-500 text-sm'>{errors.age.message}</p>}
           </div>
 
-          <div className="flex flex-col w-full mb-1 ">
+          <div className="flex flex-col w-full mb-1 text-black">
             <label htmlFor="">Email :</label>
             <input
               {...register("email")}
@@ -139,12 +139,12 @@ export default function Home() {
             {errors?.email && <p className='text-red-500 text-sm'>{errors.email.message}</p>}
           </div>
 
-          <div className="flex flex-col w-full mb-1 relative">
+          <div className="flex flex-col w-full mb-1 relative text-black">
             <label htmlFor="">Password :</label>
             <div className="relative">
               <input
                 {...register("password")}
-                className="w-full border border-gray-400  rounded p-1 h-10"
+                className="w-full border border-gray-400  rounded p-1 h-10 text-black"
                 type={showPasswrd ? "text" : "password"}
               />
               {password &&
@@ -160,12 +160,12 @@ export default function Home() {
             {errors?.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
           </div>
 
-          <div className="flex flex-col w-full mb-1 ">
+          <div className="flex flex-col w-full mb-1 text-black">
             <label htmlFor="">Confirm Password :</label>
             <div className="relative"> 
               <input
                 {...register("confirmPassword")}
-                className="w-full border border-gray-400  rounded p-1 h-10"
+                className="w-full border border-gray-400  rounded p-1 h-10 text-black"
                 type={showConfirmPasswrd ? "text" : "password"}
               />
               {confirmPassword && 
