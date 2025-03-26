@@ -65,12 +65,31 @@ export default function Home() {
   const confirmPassword = watch("confirmPassword");
 
 
-  const onSubmitForm =(data) =>{
-    
-    alert(JSON.stringify(data,null,2)) //data,null,2 -> null,2 is  used for alert message show like list of key:value
-    console.log("Form Data:", data);
-  }
+  const onSubmitForm = async (data) =>{
 
+    try {
+      const response = await fetch("/api/send-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message);  
+
+      } else {
+
+        const errorData = await response.json();
+        alert(`Failed to send email: ${errorData.error}`);
+      }
+
+
+   }catch(e){
+    console.log(e.message)
+    alert("An error while sending the email!.");
+   }
+  }
 
   return (
     <main className="w-full min-h-screen bg-violet-50 pt-10 font-serif">
