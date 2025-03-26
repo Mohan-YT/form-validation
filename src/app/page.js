@@ -76,7 +76,9 @@ export default function Home() {
 
       if (response.ok) {
         const result = await response.json();
-        alert(result.message);  
+        alert(result.message); 
+        
+        reset(); //form reset
 
       } else {
 
