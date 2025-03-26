@@ -46,7 +46,7 @@ const schema = yup.object().shape({ // Defines the validation schema.
 
 export default function Home() {
 
-  const {register, handleSubmit,formState : {errors, isValid}, watch} = useForm({
+  const {register, handleSubmit,formState : {errors, isValid}, watch, reset} = useForm({
     resolver : yupResolver(schema), // Connects the schema to react-hook-form.
     mode : 'onChange'
   });
